@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { Download, ArrowRight, ArrowUpRight } from "lucide-react";
+import { AiDetector } from "../components/ai-detector";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -596,6 +597,8 @@ function ResumePage() {
         </div>
       </section>
 
+
+      <AiDetector />
 
       {/* RECEIPT SECTION */}
       <section
