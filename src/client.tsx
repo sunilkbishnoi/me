@@ -1,26 +1,12 @@
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import { RouterProvider } from "@tanstack/react-router";
-import { getRouter } from "./router";
+import { StrictMode, startTransition } from "react";
+import { hydrateRoot } from "react-dom/client";
+import { StartClient } from "@tanstack/react-start/client";
 
-const mount = () => {
-  const container = document.getElementById("root");
-
-  if (!container) {
-    return;
-  }
-
-  const router = getRouter();
-
-  createRoot(container).render(
+startTransition(() => {
+  hydrateRoot(
+    document,
     <StrictMode>
-      <RouterProvider router={router} />
+      <StartClient />
     </StrictMode>,
   );
-};
-
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", mount, { once: true });
-} else {
-  mount();
-}
+});
