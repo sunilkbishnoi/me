@@ -206,7 +206,7 @@ function WireframeBG({ mx, my }: { mx: number; my: number }) {
   const [t, setT] = useState(0);
   useEffect(() => {
     let raf = 0;
-    let start = performance.now();
+    const start = performance.now();
     const tick = (now: number) => {
       setT((now - start) / 1000);
       raf = requestAnimationFrame(tick);
@@ -453,9 +453,10 @@ function ResumePage() {
           </div>
 
           <p className="mt-8 max-w-2xl mx-auto text-sm sm:text-base text-white/60 leading-relaxed">
-            Currently working with <span className="text-white">IndianOil Corporation Limited</span> at
-            Gujarat Refinery, supporting networking, data center operations and IAM. Building toward
-            cloud security through hands-on learning and a B.Tech CSE at ITM (SLS) Baroda University.
+            Currently working with <span className="text-white">IndianOil Corporation Limited</span>{" "}
+            at Gujarat Refinery, supporting networking, data center operations and IAM. Building
+            toward cloud security through hands-on learning and a B.Tech CSE at ITM (SLS) Baroda
+            University.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -483,7 +484,10 @@ function ResumePage() {
             style={{ fontFamily: "JetBrains Mono, monospace" }}
           >
             {STATS.map(([n, k, sub]) => (
-              <div key={k} className="bg-black/60 p-5 sm:p-6 text-left hover:bg-white/[0.06] transition-colors">
+              <div
+                key={k}
+                className="bg-black/60 p-5 sm:p-6 text-left hover:bg-white/[0.06] transition-colors"
+              >
                 <div className="text-[10px] tracking-[0.3em] text-white/40">{k}</div>
                 <div
                   className="mt-2 text-3xl sm:text-4xl font-extrabold text-white"
