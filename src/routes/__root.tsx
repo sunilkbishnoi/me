@@ -77,8 +77,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sunil Bishnoi" },
-      { name: "description", content: "Cybersecurity Resume" },
+      { title: "Sunil Bishnoi — Cybersecurity & Infrastructure" },
+      {
+        name: "description",
+        content:
+          "Resume and portfolio of Sunil Bishnoi, working across networking, data center operations, IAM and cloud security.",
+      },
       { name: "author", content: "Sunil Bishnoi" },
       { property: "og:title", content: "Sunil Bishnoi" },
       { property: "og:description", content: "Cybersecurity Resume" },

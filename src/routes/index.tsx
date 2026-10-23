@@ -5,16 +5,17 @@ import { Download, ArrowRight, ArrowUpRight } from "lucide-react";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Sunil Bishnoi — Aspiring Cybersecurity Student" },
+      { title: "Sunil Bishnoi — Cybersecurity & Infrastructure" },
       {
         name: "description",
         content:
-          "Interactive resume of Sunil Bishnoi — Cybersecurity Intern at iSecurify (Allianz Cloud), B.Tech CSE at ITM (SLS) Baroda University.",
+          "Interactive resume of Sunil Bishnoi — Networking, data center and IAM professional at IndianOil Gujarat Refinery, learning cloud security.",
       },
       { property: "og:title", content: "Sunil Bishnoi — Cybersecurity" },
       {
         property: "og:description",
-        content: "Aspiring cybersecurity student & intern. SIEM, VAPT, endpoint security.",
+        content:
+          "Networking, data center and IAM professional at IndianOil Gujarat Refinery, learning cloud security.",
       },
     ],
   }),
@@ -65,10 +66,28 @@ const SKILLS = [
 ];
 
 const TOOLS = [
-  "Wireshark", "Nmap", "Burp Suite", "Metasploit", "Nessus", "OpenVAS",
-  "Splunk", "Wazuh", "OWASP ZAP", "Kali Linux", "TryHackMe", "Linux CLI",
-  "Snort", "pfSense", "Hydra", "John the Ripper", "Aircrack-ng", "Maltego",
-  "Autopsy", "Volatility", "Git", "Docker",
+  "Wireshark",
+  "Nmap",
+  "Burp Suite",
+  "Metasploit",
+  "Nessus",
+  "OpenVAS",
+  "Splunk",
+  "Wazuh",
+  "OWASP ZAP",
+  "Kali Linux",
+  "TryHackMe",
+  "Linux CLI",
+  "Snort",
+  "pfSense",
+  "Hydra",
+  "John the Ripper",
+  "Aircrack-ng",
+  "Maltego",
+  "Autopsy",
+  "Volatility",
+  "Git",
+  "Docker",
 ];
 
 const LANGS = [
@@ -142,7 +161,8 @@ const CERTS = [
 ];
 
 const ACHIEVEMENTS = [
-  "Selected for on-site cybersecurity internship at iSecurify (Allianz Cloud) during B.Tech.",
+  "Currently working at IndianOil Corporation Limited, Gujarat Refinery, across networking, data center operations and IAM.",
+  "Completed a cybersecurity internship at iSecurify (Allianz Cloud) during B.Tech.",
   "Consistent 8.23 CGPA while running parallel security labs & TryHackMe rooms.",
   "Maintains active TryHackMe profile and personal portfolio shipping security write-ups.",
   "Comfortable across both blue-team (SIEM, IR) and red-team (VAPT) workflows.",
@@ -156,20 +176,23 @@ function useTyping(words: string[], speed = 80, pause = 1400) {
   const [del, setDel] = useState(false);
   useEffect(() => {
     const w = words[i % words.length];
-    const t = setTimeout(() => {
-      if (!del) {
-        const next = w.slice(0, text.length + 1);
-        setText(next);
-        if (next === w) setTimeout(() => setDel(true), pause);
-      } else {
-        const next = w.slice(0, text.length - 1);
-        setText(next);
-        if (next === "") {
-          setDel(false);
-          setI((p) => p + 1);
+    const t = setTimeout(
+      () => {
+        if (!del) {
+          const next = w.slice(0, text.length + 1);
+          setText(next);
+          if (next === w) setTimeout(() => setDel(true), pause);
+        } else {
+          const next = w.slice(0, text.length - 1);
+          setText(next);
+          if (next === "") {
+            setDel(false);
+            setI((p) => p + 1);
+          }
         }
-      }
-    }, del ? speed / 2 : speed);
+      },
+      del ? speed / 2 : speed,
+    );
     return () => clearTimeout(t);
   }, [text, del, i, words, speed, pause]);
   return text;
@@ -269,9 +292,9 @@ function WireframeBG({ mx, my }: { mx: number; my: number }) {
 
 function ResumePage() {
   const typed = useTyping([
-    "ASPIRING CYBERSECURITY STUDENT.",
-    "SOC ANALYST IN TRAINING.",
-    "VAPT // SIEM // ENDPOINT.",
+    "CYBERSECURITY & INFRASTRUCTURE.",
+    "NETWORKING // DATA CENTER // IAM.",
+    "LEARNING CLOUD SECURITY.",
     "BUILDING A SECURE FUTURE.",
   ]);
   const [mouse, setMouse] = useState({ x: 0.5, y: 0.5 });
@@ -412,7 +435,10 @@ function ResumePage() {
             </span>
             <span className="block text-[11vw] sm:text-[7.5vw] md:text-[6.5vw] font-extrabold tracking-tight">
               Bishnoi{" "}
-              <span className="text-white/40 font-light italic" style={{ fontFamily: "Instrument Serif, serif" }}>
+              <span
+                className="text-white/40 font-light italic"
+                style={{ fontFamily: "Instrument Serif, serif" }}
+              >
                 — Resume
               </span>
             </span>
@@ -427,9 +453,10 @@ function ResumePage() {
           </div>
 
           <p className="mt-8 max-w-2xl mx-auto text-sm sm:text-base text-white/60 leading-relaxed">
-            Cybersecurity Intern at <span className="text-white">iSecurify</span> (Allianz Cloud Pvt. Ltd.) —
-            building hands‑on experience across SIEM, VAPT, endpoint security and incident response while pursuing
-            B.Tech CSE at ITM (SLS) Baroda University.
+            Working at <span className="text-white">IndianOil Corporation Limited</span>, Gujarat
+            Refinery — building practical experience across networking, data center operations and
+            IAM while learning cloud security and pursuing B.Tech CSE at ITM (SLS) Baroda
+            University.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -510,7 +537,8 @@ function ResumePage() {
               className="text-[11px] tracking-[0.3em] text-white/40 max-w-xs"
               style={{ fontFamily: "JetBrains Mono, monospace" }}
             >
-              FOUR DOMAINS · ONE GOAL —<br />SHIP SECURE SYSTEMS.
+              FOUR DOMAINS · ONE GOAL —<br />
+              SHIP SECURE SYSTEMS.
             </div>
           </div>
 
@@ -529,7 +557,11 @@ function ResumePage() {
                 </div>
                 <div
                   className="mt-6 text-2xl font-extrabold tracking-tight"
-                  style={{ fontFamily: "Instrument Serif, serif", fontStyle: "italic", fontWeight: 500 }}
+                  style={{
+                    fontFamily: "Instrument Serif, serif",
+                    fontStyle: "italic",
+                    fontWeight: 500,
+                  }}
                 >
                   {f.title}
                 </div>
@@ -571,12 +603,13 @@ function ResumePage() {
               className="mt-5 text-3xl sm:text-5xl leading-[1.05] text-white"
               style={{ fontFamily: "Instrument Serif, serif" }}
             >
-              Interning at <span className="italic text-white/70">iSecurify</span> —
-              learning the craft of <span className="italic">defending real systems.</span>
+              Working at <span className="italic text-white/70">IndianOil</span> — securing
+              infrastructure across <span className="italic">network, data center and IAM.</span>
             </h3>
             <p className="mt-5 text-white/60 leading-relaxed max-w-2xl">
-              On-site at Allianz Cloud Pvt. Ltd., Vadodara. Splitting time between SIEM dashboards,
-              VAPT engagements, endpoint hygiene and writing things down so the next analyst doesn't have to guess.
+              Currently working at IndianOil Corporation Limited, Gujarat Refinery, with a focus on
+              networking, data center operations and identity and access management while building
+              cloud security skills.
             </p>
           </div>
           <div
@@ -585,7 +618,12 @@ function ResumePage() {
           >
             <div className="text-[10px] tracking-[0.35em] text-white/40">WHAT'S NEXT</div>
             <ul className="mt-5 space-y-3 text-[12px] tracking-wider text-white/75">
-              {["GOOGLE CYBERSECURITY CERT", "OSCP PREP PATH", "CTF · CAPTURE THE FLAG", "SOC L1 → L2 ROADMAP"].map((x) => (
+              {[
+                "GOOGLE CYBERSECURITY CERT",
+                "OSCP PREP PATH",
+                "CTF · CAPTURE THE FLAG",
+                "SOC L1 → L2 ROADMAP",
+              ].map((x) => (
                 <li key={x} className="flex items-start gap-3">
                   <span className="text-emerald-400">▸</span>
                   <span>{x}</span>
@@ -596,12 +634,8 @@ function ResumePage() {
         </div>
       </section>
 
-
       {/* RECEIPT SECTION */}
-      <section
-        id="receipt"
-        className="relative bg-black py-20 sm:py-28 px-4 sm:px-8"
-      >
+      <section id="receipt" className="relative bg-black py-20 sm:py-28 px-4 sm:px-8">
         {/* faint backdrop pattern */}
         <div
           className="absolute inset-0 opacity-[0.06] pointer-events-none"
@@ -631,7 +665,7 @@ function ResumePage() {
                   SUNIL BISHNOI
                 </h2>
                 <div className="mt-3 text-[11px] tracking-[0.35em] text-black/70">
-                  ASPIRING CYBERSECURITY STUDENT
+                  CYBERSECURITY &amp; INFRASTRUCTURE
                 </div>
                 <div className="mt-2 text-[10px] tracking-[0.3em] text-black/50">
                   ISSUED: {today} · LOCATION: VADODARA, IN
@@ -664,6 +698,26 @@ function ResumePage() {
               <Divider label="// EXPERIENCE" />
 
               <DocBox title="CURRENT_ROLE">
+                <Row k="[ROLE]">Networking · Data Center · IAM</Row>
+                <Row k="[ORG]">IndianOil Corporation Limited</Row>
+                <Row k="[SITE]">Gujarat Refinery · India</Row>
+                <Row k="[MODE]">Current · Infrastructure + Security</Row>
+                <div className="mt-4 pl-1 space-y-1.5 text-[12px] leading-relaxed text-black/80">
+                  {[
+                    "Network operations and infrastructure support",
+                    "Data center operations and availability",
+                    "Identity and access management (IAM)",
+                    "Learning cloud security practices",
+                  ].map((it) => (
+                    <div key={it} className="flex gap-2">
+                      <span className="text-black/50">›</span>
+                      <span>{it}</span>
+                    </div>
+                  ))}
+                </div>
+              </DocBox>
+
+              <DocBox title="PREVIOUS_ROLE">
                 <Row k="[ROLE]">Cybersecurity Intern</Row>
                 <Row k="[ORG]">
                   iSecurify · under{" "}
@@ -677,7 +731,7 @@ function ResumePage() {
                   </a>
                 </Row>
                 <Row k="[SITE]">Vadodara · On-Site</Row>
-                <Row k="[MODE]">Active · Learning + Delivery</Row>
+                <Row k="[MODE]">Completed · Learning + Delivery</Row>
                 <div className="mt-4 pl-1 space-y-1.5 text-[12px] leading-relaxed text-black/80">
                   {[
                     "Security monitoring & incident handling",
@@ -699,24 +753,13 @@ function ResumePage() {
 
               <div className="space-y-3">
                 {EDUCATION.map((e) => (
-                  <div
-                    key={e.title}
-                    className="border border-black rounded-md p-4"
-                  >
+                  <div key={e.title} className="border border-black rounded-md p-4">
                     <div className="flex items-start justify-between gap-3">
-                      <div className="text-[10px] tracking-[0.3em] text-black/60">
-                        {e.years}
-                      </div>
-                      <div className="text-[11px] font-bold tracking-wider">
-                        {e.detail}
-                      </div>
+                      <div className="text-[10px] tracking-[0.3em] text-black/60">{e.years}</div>
+                      <div className="text-[11px] font-bold tracking-wider">{e.detail}</div>
                     </div>
-                    <div className="mt-2 text-[13px] font-bold tracking-wide">
-                      {e.title}
-                    </div>
-                    <div className="text-[12px] text-black/70 mt-0.5">
-                      {e.place}
-                    </div>
+                    <div className="mt-2 text-[13px] font-bold tracking-wide">{e.title}</div>
+                    <div className="text-[12px] text-black/70 mt-0.5">{e.place}</div>
                   </div>
                 ))}
               </div>
@@ -725,7 +768,9 @@ function ResumePage() {
 
               <DocBox title="CORE_COMPETENCIES">
                 {SKILLS.map(([k, v]) => (
-                  <Row key={k} k={`[${k}]`}>{v}</Row>
+                  <Row key={k} k={`[${k}]`}>
+                    {v}
+                  </Row>
                 ))}
               </DocBox>
 
@@ -762,9 +807,7 @@ function ResumePage() {
                     <div className="mt-1 text-[10px] tracking-[0.25em] text-black/60">
                       {p.stack}
                     </div>
-                    <div className="mt-3 text-[12px] leading-relaxed text-black/80">
-                      {p.body}
-                    </div>
+                    <div className="mt-3 text-[12px] leading-relaxed text-black/80">{p.body}</div>
                   </div>
                 ))}
               </div>
@@ -796,12 +839,11 @@ function ResumePage() {
               <div className="border border-black rounded-md p-5 bg-black text-white">
                 <div className="text-[10px] tracking-[0.35em] text-white/50">// STATEMENT</div>
                 <p className="mt-3 text-[13px] leading-relaxed">
-                  To grow into a sharp, dependable cybersecurity engineer — one who can defend, attack
-                  and document with equal confidence. Less noise, more signal. Build safer systems and
-                  help others do the same.
+                  To grow into a sharp, dependable cybersecurity engineer — one who can defend,
+                  attack and document with equal confidence. Less noise, more signal. Build safer
+                  systems and help others do the same.
                 </p>
               </div>
-
 
               {/* barcode */}
               <div className="mt-12 flex justify-center">
@@ -879,14 +921,11 @@ function PerforatedEdge({ position }: { position: "top" | "bottom" }) {
 function Divider({ label }: { label: string }) {
   return (
     <div className="my-7 flex items-center gap-3">
-      <span className="text-[10px] tracking-[0.35em] text-black/60 whitespace-nowrap">
-        {label}
-      </span>
+      <span className="text-[10px] tracking-[0.35em] text-black/60 whitespace-nowrap">{label}</span>
       <span
         className="flex-1 h-px"
         style={{
-          backgroundImage:
-            "repeating-linear-gradient(90deg, #000 0 4px, transparent 4px 8px)",
+          backgroundImage: "repeating-linear-gradient(90deg, #000 0 4px, transparent 4px 8px)",
         }}
       />
     </div>
@@ -925,16 +964,10 @@ function Barcode() {
     <div className="text-center">
       <div className="flex items-end gap-[2px] h-12 justify-center">
         {bars.map((w, i) => (
-          <span
-            key={i}
-            className="bg-black"
-            style={{ width: `${w}px`, height: "100%" }}
-          />
+          <span key={i} className="bg-black" style={{ width: `${w}px`, height: "100%" }} />
         ))}
       </div>
-      <div className="mt-2 text-[10px] tracking-[0.4em] text-black/70">
-        SB · 9687055205 · CSN
-      </div>
+      <div className="mt-2 text-[10px] tracking-[0.4em] text-black/70">SB · 9687055205 · CSN</div>
     </div>
   );
 }
