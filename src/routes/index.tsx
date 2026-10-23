@@ -97,10 +97,10 @@ const LANGS = [
 ];
 
 const STATS: Array<[string, string, string]> = [
+  ["NOW", "ROLE", "INDIANOIL · GUJARAT REFINERY"],
+  ["03", "DOMAINS", "NETWORK · DATA CENTER · IAM"],
   ["08.23", "CGPA", "B.TECH · CSE"],
   ["22+", "TOOLS", "OFFENSIVE + DEFENSIVE"],
-  ["100%", "FOCUS", "CYBERSECURITY TRACK"],
-  ["24/7", "MODE", "ALWAYS LEARNING"],
 ];
 
 const FOCUS = [
@@ -374,7 +374,7 @@ function ResumePage() {
             className="text-[11px] tracking-[0.25em] text-white/70"
             style={{ fontFamily: "JetBrains Mono, monospace" }}
           >
-            SB / RESUME_V1
+            SB / PROFILE_2026
           </div>
           <button
             onClick={handleExport}
@@ -453,10 +453,9 @@ function ResumePage() {
           </div>
 
           <p className="mt-8 max-w-2xl mx-auto text-sm sm:text-base text-white/60 leading-relaxed">
-            Working at <span className="text-white">IndianOil Corporation Limited</span>, Gujarat
-            Refinery — building practical experience across networking, data center operations and
-            IAM while learning cloud security and pursuing B.Tech CSE at ITM (SLS) Baroda
-            University.
+            Currently working with <span className="text-white">IndianOil Corporation Limited</span> at
+            Gujarat Refinery, supporting networking, data center operations and IAM. Building toward
+            cloud security through hands-on learning and a B.Tech CSE at ITM (SLS) Baroda University.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">
@@ -484,7 +483,7 @@ function ResumePage() {
             style={{ fontFamily: "JetBrains Mono, monospace" }}
           >
             {STATS.map(([n, k, sub]) => (
-              <div key={k} className="bg-black/60 p-5 sm:p-6 text-left">
+              <div key={k} className="bg-black/60 p-5 sm:p-6 text-left hover:bg-white/[0.06] transition-colors">
                 <div className="text-[10px] tracking-[0.3em] text-white/40">{k}</div>
                 <div
                   className="mt-2 text-3xl sm:text-4xl font-extrabold text-white"
@@ -529,8 +528,8 @@ function ResumePage() {
                 className="mt-3 text-4xl sm:text-6xl leading-[0.95] text-white"
                 style={{ fontFamily: "Instrument Serif, serif" }}
               >
-                <span className="italic text-white/60">how i </span>
-                <span className="font-medium">spend my hours.</span>
+                <span className="italic text-white/60">where i </span>
+                <span className="font-medium">build confidence.</span>
               </h2>
             </div>
             <div
@@ -698,10 +697,11 @@ function ResumePage() {
               <Divider label="// EXPERIENCE" />
 
               <DocBox title="CURRENT_ROLE">
-                <Row k="[ROLE]">Networking · Data Center · IAM</Row>
+                <Row k="[ROLE]">Network · Data Center · IAM</Row>
                 <Row k="[ORG]">IndianOil Corporation Limited</Row>
                 <Row k="[SITE]">Gujarat Refinery · India</Row>
                 <Row k="[MODE]">Current · Infrastructure + Security</Row>
+                <Row k="[TRACK]">Cloud security · Learning in progress</Row>
                 <div className="mt-4 pl-1 space-y-1.5 text-[12px] leading-relaxed text-black/80">
                   {[
                     "Network operations and infrastructure support",
@@ -731,7 +731,7 @@ function ResumePage() {
                   </a>
                 </Row>
                 <Row k="[SITE]">Vadodara · On-Site</Row>
-                <Row k="[MODE]">Completed · Learning + Delivery</Row>
+                <Row k="[MODE]">Completed · Internship</Row>
                 <div className="mt-4 pl-1 space-y-1.5 text-[12px] leading-relaxed text-black/80">
                   {[
                     "Security monitoring & incident handling",
