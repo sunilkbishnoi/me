@@ -1,6 +1,3 @@
-import { StartServer } from "@tanstack/react-start/server";
-import { getRouter } from "./router";
+import serverEntry from "@tanstack/react-start/server-entry";
 
-export default function render() {
-  return <StartServer router={getRouter()} />;
-}
+export default serverEntry;
