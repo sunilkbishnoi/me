@@ -6,9 +6,9 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   build: {
     outDir: "public",
-    emptyOutDir: false,
+    emptyOutDir: true,
     rollupOptions: {
-      input: "src/entry-client.tsx",
+      input: "index.html",
       output: {
         entryFileNames: "assets/app.js",
         chunkFileNames: "assets/[name]-[hash].js",
